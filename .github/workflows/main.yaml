@@ -16,7 +16,7 @@ jobs:
         run: | 
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git remote add upstream ssh://git@github.com:kbsec/CS-501-2021.git
+          git remote add upstream https://github.com/kbsec/CS-501-2021.git
           git fetch upstream
           git merge upstream/main main
           git push origin
