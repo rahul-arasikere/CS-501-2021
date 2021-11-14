@@ -139,7 +139,7 @@ In order to make an HTTP request, you must do the following:
 ::WinHttpSendRequest(hRequest, WINHTTP_NO_ADDITIONAL_HEADERS, 0, WINHTTP_NO_REQUEST_DATA,0,0,0 )
 ```
 - Next, call `WinHttpReceiveResponse`  to get a handle to the response data. 
-- Check if there is data available: `WinHttpQueryDataAvailable`
+	- Check if there is data available: `WinHttpQueryDataAvailable`
 - Iterate over the response and keep calling `WinHttpReadData` until there is no more data to be read. You should accumulate all text data in a std::string buffer  buy having a fixed Char* buffer of say 4096 bytes, that you write to, and append to your buffer. 
 - Cleanup all of your handles by calling `WinHttpCloseHandle` on each WinHTTP handle. 
 	- You should also have sufficient error checking. I.e, if an error is encountered along the way to sending or receiving the request, you should close all open handle, and terminate the code.  To receive full credit, you must close all handles after either an error, or the HTTP request is finished. 

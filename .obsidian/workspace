@@ -1,0 +1,98 @@
+{
+  "main": {
+    "id": "6c853f4e03db4ab2",
+    "type": "split",
+    "children": [
+      {
+        "id": "e9956c60cf3b42cc",
+        "type": "leaf",
+        "state": {
+          "type": "pdf",
+          "state": {
+            "file": "LectureSlides/Lecture 9_.pdf"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "0c8a01beb4c9769e",
+    "type": "split",
+    "children": [
+      {
+        "id": "8fb9f411956a2c39",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4bad355b0ea42dec",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "cf343df6126eab50",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 324
+  },
+  "right": {
+    "id": "7b5705ede7ab616b",
+    "type": "split",
+    "children": [
+      {
+        "id": "dfe4ab4d96bafdc6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1d0973275ff0cafa",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "LectureSlides/Lecture 9_.pdf",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "e9956c60cf3b42cc",
+  "lastOpenFiles": [
+    "LectureSlides/Lecture 9_.pdf",
+    "LectureSlides/Lecture 8_ HTTP, RPC, WinHTTP.pdf",
+    "LectureSlides/Lecture 13_ PE File format, DLLs, Injection.pdf",
+    "CS-501-Fall-2021/Assignments/Assignment 3/README.md",
+    "CS-501-Fall-2021/Assignments.md",
+    "CS-501-Fall-2021/Assignments/Assignment 2/README.md",
+    "CS-501-Fall-2021/Assignments/Assignment 0/README.md"
+  ]
+}

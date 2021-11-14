@@ -6,7 +6,7 @@ else
 endif
 # choco install zip
 # ^ if missing 
-ZIP=ZIP=zip -r submission.zip base64 http
+ZIP=zip -r submission.zip base64 http
 
 all: zip
 

@@ -1,0 +1,141 @@
+The initial doc file has the following IOCS:
+
++----------+--------------------+---------------------------------------------+
+|Type      |Keyword             |Description                                  |
++----------+--------------------+---------------------------------------------+
+|AutoExec  |AutoOpen            |Runs when the Word document is opened        |
+|Suspicious|Environ             |May read system environment variables        |
+|Suspicious|Open                |May open a file                              |
+|Suspicious|Write               |May write to a file (if combined with Open)  |
+|Suspicious|kill                |May delete a file                            |
+|Suspicious|ADODB.Stream        |May create a text file                       |
+|Suspicious|SaveToFile          |May create a text file                       |
+|Suspicious|Shell               |May run an executable file or a system       |
+|          |                    |command                                      |
+|Suspicious|WScript.Shell       |May run an executable file or a system       |
+|          |                    |command                                      |
+|Suspicious|Run                 |May run an executable file or a system       |
+|          |                    |command                                      |
+|Suspicious|powershell          |May run PowerShell commands                  |
+|Suspicious|Start-Process       |May run an executable file or a system       |
+|          |                    |command using PowerShell                     |
+|Suspicious|CreateObject        |May create an OLE object                     |
+|Suspicious|Microsoft.XMLHTTP   |May download files from the Internet         |
+|Suspicious|User-Agent          |May download files from the Internet         |
+|Suspicious|Base64 Strings      |Base64-encoded strings were detected, may be |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|IOC       |https://ch0nky.chick|URL                                          |
+|          |enkiller.com/ItSuppo|                                             |
+|          |rt.exe              |                                             |
+|IOC       |powershell.exe      |Executable file name                         |
+|IOC       |ItSupport.exe       |Executable file name                         |
+|IOC       |ell.exe             |Executable file name                         |
++----------+--------------------+---------------------------------------------+
+
+The above report was generated using oletools.
+
+ch0nky.chickenkiller.com has the following dns record according to dig:
+
+ch0nky.chickenkiller.com. 3600	IN	A	159.65.231.129
+
+The macro downloads the downloader from the url "https://c0nky.chickenkiller.com/ItSupport.exe" and sets the user agent as last time.
+
+PEStudio indicators for the downloader:
+
+The file references string(s),type: blacklist, count: 12,1
+The file is scored by virustotal,score: 1/67,1
+The dos-stub message is missing,result: yes,1
+The file exposes thread-local-storage (TLS) callback(s),count: 2,1
+The count of libraries is suspicious,count: 0,1
+The count of imports is suspicious,count: 0,1
+The file references a URL pattern,url: http://ch0nky.chickenkiller.com/update.exe,1
+The file checksum is invalid,checksum: 0x00000000,3
+The file references a group of API,type: network, count: 12,3
+The file references a group of API,type: execution, count: 16,3
+The file references a group of API,type: file, count: 12,3
+The file references a group of API,type: synchronization, count: 18,3
+The file references a group of API,type: dynamic-library, count: 8,3
+The file references a group of API,type: diagnostic, count: 4,3
+The file references a group of API,type: reckoning, count: 10,3
+The file references a group of API,type: exception, count: 6,3
+The file references a group of API,type: memory, count: 14,3
+The file references a group of hint,type: format-string, count: 27,3
+The file references a group of hint,type: file, count: 23,3
+The file references a group of hint,type: utility, count: 4,3
+The file references a group of hint,type: base64, count: 15,3
+The file references a group of hint,type: url-pattern, count: 1,3
+The file references string(s),type: whitelist, count: 12,4
+The file contains a rich-header,status: no,4
+The file uses Control Flow Guard (CFG) as software security defense,status: no,4
+The file opts for Data Execution Prevention (DEP) as software security defense,status: yes,4
+The file opts for Address Space Layout Randomization (ASLR) as software security defense,status: yes,4
+The file subsystem has been found,type: console,4
+The file contains a Manifest,status: no,4
+The file opts for Stack Buffer Overrun Detection (GS) as software security defense,status: no,4
+The file contains a digital Certificate,status: no,4
+The file opts for Code Integrity (CI) a software security defense,status: no,4
+The file-ratio of the section(s) has been determined,ratio: 99.83%,4
+The file references string(s),type: ascii, count: 8848,4
+The file references string(s),type: unicode, count: 111,4
+
+PEStudio indicators for the payload:
+The file references string(s),type: blacklist, count: 15,1
+The dos-stub message is missing,result: yes,1
+The count of libraries is suspicious,count: 0,1
+The count of imports is suspicious,count: 0,1
+The file contains a blacklist section,section: .00cfg,1
+The file contains a blacklist section,section: .gehcont,1
+The file references a group of API,type: network, count: 20,3
+The file references a group of API,type: data-exchange, count: 4,3
+The file references a group of API,type: execution, count: 12,3
+The file references a group of API,type: console, count: 4,3
+The file references a group of API,type: reckoning, count: 10,3
+The file references a group of API,type: file, count: 6,3
+The file references a group of API,type: diagnostic, count: 4,3
+The file references a group of API,type: dynamic-library, count: 4,3
+The file references a group of API,type: synchronization, count: 4,3
+The file references a group of API,type: exception, count: 6,3
+The file references a group of API,type: memory, count: 10,3
+The file references a group of API,type: registry, count: 8,3
+The file references a group of hint,type: file, count: 17,3
+The file references a group of hint,type: registry, count: 2,3
+The file references a group of hint,type: base64, count: 1,3
+The file references a group of hint,type: utility, count: 1,3
+The file references a group of hint,type: rtti, count: 15,3
+The file references a group of hint,type: size, count: 1,3
+The file references string(s),type: whitelist, count: 15,4
+The file contains a rich-header,status: no,4
+The file uses Control Flow Guard (CFG) as software security defense,status: no,4
+The file opts for Data Execution Prevention (DEP) as software security defense,status: yes,4
+The file opts for Address Space Layout Randomization (ASLR) as software security defense,status: yes,4
+The file subsystem has been found,type: console,4
+The file contains a Manifest,status: yes,4
+The file opts for Stack Buffer Overrun Detection (GS) as software security defense,status: no,4
+The file contains a digital Certificate,status: no,4
+The file opts for Code Integrity (CI) a software security defense,status: no,4
+The file-ratio of the section(s) has been determined,ratio: 97.33%,4
+The file references string(s),type: ascii, count: 448,4
+The file references string(s),type: unicode, count: 9,4
+
+1) What type of malware is this 
+THe malware is a dropper, and loads additional executables from the command server and tries to execute them with powershell.
+
+2) What functionality does it have
+It can modify system settings, to set itself as a startup program, create a secure TLS connection with the command server and execute programs. It can also create and stop threads as required.
+
+3) How does the malware uniquely identify victims?
+It generates a hash using the computer name.
+
+4) What kind of system information does it collect from the victim machine?
+The command server sends the command `(@([System.Net.Dns]::GetHostAddresses($ENV:HOSTNAME)) | %{$_.IPAddressToString}) -join ", "` to be run in powershell. The malware registers with command server with the guid, username and computer name. It ties this information to an authentication token.
+
+
+5) How could you detect it by inspecting network/HTTP traffic. Are there any suspicious headers? 
+It creates a secure session with https://ch0nky.chickenkiller.com/checkin.php as well as `/register.php`. It also sets the User-Agent as ch0nky. 
+
+6) What compiler was used?
+The compiler used was clang. 
+
+7) What is the internal name of the executable?
+update.exe
