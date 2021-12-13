@@ -30,6 +30,4 @@ class AESGCM{
         BCRYPT_AUTH_TAG_LENGTHS_STRUCT authTagLengths;
         DWORD ptBufferSize = 0; // pointer to plaintext size
         BYTE* plaintext = NULL; // pointer to plaintext
-
-
 };
