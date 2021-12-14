@@ -7,9 +7,10 @@
         "id": "e9956c60cf3b42cc",
         "type": "leaf",
         "state": {
-          "type": "pdf",
+          "type": "markdown",
           "state": {
-            "file": "LectureSlides/Lecture 9_.pdf"
+            "file": "CS-501-Fall-2021/Assignments/Assignment 0/README.md",
+            "mode": "source"
           }
         }
       }
@@ -67,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "LectureSlides/Lecture 9_.pdf",
+                "file": "CS-501-Fall-2021/Assignments/Assignment 0/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,12 +88,12 @@
   },
   "active": "e9956c60cf3b42cc",
   "lastOpenFiles": [
+    "CS-501-Fall-2021/Assignments/Assignment 0/README.md",
     "LectureSlides/Lecture 9_.pdf",
     "LectureSlides/Lecture 8_ HTTP, RPC, WinHTTP.pdf",
     "LectureSlides/Lecture 13_ PE File format, DLLs, Injection.pdf",
     "CS-501-Fall-2021/Assignments/Assignment 3/README.md",
     "CS-501-Fall-2021/Assignments.md",
-    "CS-501-Fall-2021/Assignments/Assignment 2/README.md",
-    "CS-501-Fall-2021/Assignments/Assignment 0/README.md"
+    "CS-501-Fall-2021/Assignments/Assignment 2/README.md"
   ]
 }

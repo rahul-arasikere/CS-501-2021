@@ -378,7 +378,7 @@ void* FindBaseAddr(){
 
 
 void* GetProcAddressR(void* lpBaseAddr, char* funName){
-
+    
 }
 
 

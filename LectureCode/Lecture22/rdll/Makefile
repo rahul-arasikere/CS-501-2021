@@ -1,5 +1,5 @@
-CC=gcc 
-CXX=g++
+CC=x86_64-w64-mingw32-gcc 
+CXX=x86_64-w64-mingw32-g++
 CFLAGS=-municode
 LDFLAGS=-lWinmm
 DLL=-shared
