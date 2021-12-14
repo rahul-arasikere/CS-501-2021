@@ -85,6 +85,10 @@ void AESGCM::Decrypt(BYTE *nonce, size_t nonceLen, BYTE *data, size_t dataLen, B
         wprintf(L"BCryptDecrypt failed with error code: %x\n", ret);
         return;
     }
+    if (plaintext != NULL)
+    {
+        delete[] plaintext;
+    }
     plaintext = new BYTE[ptBufferSize];
     if ((ret = BCryptDecrypt(hKey, data, dataLen, &paddingInfo, nonce, nonceLen, plaintext, ptBufferSize, &ptBufferSize, 0)) != STATUS_SUCCESS)
     {
