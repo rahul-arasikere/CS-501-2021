@@ -76,14 +76,18 @@ void AESGCM::Decrypt(BYTE *nonce, size_t nonceLen, BYTE *data, size_t dataLen, B
     ptBufferSize = 0;
     NTSTATUS ret;
     BCRYPT_INIT_AUTH_MODE_INFO(paddingInfo);
-    paddingInfo.pbTag = tag;
-    paddingInfo.cbTag = authTagLengths.dwMinLength;
+    paddingInfo.pbTag = macTag;
+    paddingInfo.cbTag = macTagLen;
     paddingInfo.pbNonce = nonce;
     paddingInfo.cbNonce = nonceLen;
     if ((ret = BCryptDecrypt(hKey, data, dataLen, &paddingInfo, nonce, nonceLen, NULL, ptBufferSize, &ptBufferSize, 0)) != STATUS_SUCCESS)
     {
         wprintf(L"BCryptDecrypt failed with error code: %x\n", ret);
         return;
+    }
+    if (plaintext != NULL)
+    {
+        delete[] plaintext;
     }
     plaintext = new BYTE[ptBufferSize];
     if ((ret = BCryptDecrypt(hKey, data, dataLen, &paddingInfo, nonce, nonceLen, plaintext, ptBufferSize, &ptBufferSize, 0)) != STATUS_SUCCESS)

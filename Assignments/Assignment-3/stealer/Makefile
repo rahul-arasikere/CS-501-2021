@@ -1,6 +1,6 @@
 CC=gcc
 CXX=g++
-LDFLAGS=  -static -lshell32  -lshlwapi -lcrypt32 -lbcrypt -municode
+LDFLAGS= -lshell32  -lshlwapi -lcrypt32 -lbcrypt -municode
 PDB=-g
 BIN=bin
 ifeq ($(OS),Windows_NT)
